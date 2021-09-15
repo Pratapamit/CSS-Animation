@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+	<title>CSS3 Animation</title>
+	<style type="text/css">
+
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		margin: 0;
+	}
+		
+		nav{
+			width: 100%;
+			height: auto;
+			padding: 20px;
+			background-color: #191a1a;
+			display: flex;
+			position: fixed;
+		}
+		nav>div{
+			width: 50%;
+		}
+		nav>div:first-child{
+			color: white;
+			font-size: 2vw;
+			font-weight: bold;
+			margin-left: 20px;
+		
+		}
+		nav>div:last-child>a{
+			color: white;
+			text-decoration: none;
+			margin-left: 5%;
+			font-size: 1vw;
+			transition: 0.4s;
+			transition-delay: 0.2s;
+			padding: 1.8%;
+			margin-top: -5px;
+		}
+		nav>div:last-child>a:hover{
+			background-color: #333838;
+		}
+		nav>div:last-child{
+			display: flex;
+			justify-content: flex-end;
+			margin-right: 6%;
+			align-items: center;
+		}
+
+		.searchBox{
+			position: absolute;
+			top: 40px;
+			left: 46%;
+			transform: translate(-50%,-50%);
+			height: 50px;
+			border-radius: 40px;	
+		}
+		.searchBtn{
+			background-color: #333838;
+			padding: 15px 17px;
+			border-radius: 50%;
+			transition: 0.4s;
+			position: relative;
+			top: 3px;
+			right: 2px;
+		}
+		.searchInput{
+			border: none;
+			background: none;
+			outline: none;
+			transition: 0.4s;
+			width: 0;
+			padding: 16px;
+		}
+		.searchBtn>i{
+			color: white;
+			font-size: 1vw;
+		}
+		.searchBox:hover>.searchInput{
+			width: 240px;
+		}
+		.searchBox:hover{
+			background-color: #333838;
+		}
+		.searchBox:hover>.searchBtn{
+			background-color: white;
+		}
+		.searchBox:hover>.searchBtn>i{
+			color: red;
+		}
+		.topSection>img{
+			width: 100%;
+			height: 650px;
+		}
+		.topSection>p{
+			text-align: center;
+			font-size: 2vw;
+			color: gray;
+		}
+		.topSection>p>span{
+			margin-left: 5px;
+			font-weight: bold;
+			animation-name: blinkingCursor;
+			animation-duration: 0.7s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			transition: 2s linear;
+		}
+		@keyframes blinkingCursor{
+			to{color: black;}
+			from{color: white;}
+		}
+		.imgSection{
+			display: flex;
+			margin-left: 15%;
+			margin-right: 15%;
+		}
+		.imgSection>a>div{
+			width: 11vw;
+			height: 250px;
+			transition: all 2s;
+		}
+		.imgSection>a>div:hover{
+			transform: scaleX(2);
+		}
+		.imgSection>a>div:hover>h1,.imgSection>a>div:hover>p{
+			filter: opacity(100%);
+		}
+		.imgSection>a>div>h1,.imgSection>a>div>p{
+			color: white;
+			display: flex;	
+			transform: translate(5px,170px);
+			filter: opacity(0);
+		}
+		.imgSection>a>div>p{
+			transform: translate(5px,150px);
+		}
+		.imgSection>a{
+			text-decoration: none;
+		}
+		.imgDiv1{
+			background-image: url("Images/bridge.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.imgDiv2{
+			background-image: url("Images/ramp.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.imgDiv3{
+			background-image: url("Images/headPhone.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.imgDiv4{
+			background-image: url("Images/window.JFIF");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.imgDiv5{
+			background-image: url("Images/baby.JFIF");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.imgDiv6{
+			background-image: url("Images/building.JFIF");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.middleSection{
+			display: flex;
+			margin-left: 10%;
+			margin-right: 10%;
+			margin-top: 6%;
+		}
+		.middleSection>div{
+			width: 33.3%;
+			height: 350px;
+			padding: 3% 8%;
+			cursor: pointer;			
+		}
+		.middleSection>div:hover{
+			transform: scale(1.1);
+			opacity: 0.8;
+		}
+		.middleSection>div>p{
+			font-size: 1vw;
+			color: white;
+			text-align: center;
+		}
+		.middleSection>div>p::Selection{
+			background-color: black;
+		}
+		.middleSection>.div1{
+			background-color: #f7bd52;		
+		}
+		.middleSection>.div2{
+			background-color: #60bbf7;
+		}
+		.middleSection>.div3{
+			background-color: #fc9fc9;
+		}
+
+		.article{
+			margin-left: 5%;
+			margin-right: 5%;
+			margin-top: 5%;
+		}
+		.article>p{
+			font-size: 1.2vw;
+			line-height: 30px;
+		}
+		.middleSection2>div{
+			display: flex;			
+		}
+		.middleSection2>div>a{
+			width: 100%;
+			height: 400px;
+			text-decoration: none;
+			color: white;	
+		}
+		.middleSection2>div>a:hover{
+			opacity: 0.9;
+		}
+		.middleSection2>.div1>a:first-child{
+			background-color: #1d6e4f;
+		}
+		.middleSection2>.div1>a:last-child{
+			background-color: #8f5167;
+		}
+		.middleSection2>.div2>a:first-child{
+			background-color: #c682fa;
+		}
+		.middleSection2>.div2>a:last-child{
+			background-color: #a88631;
+		}
+		.middleSection2>.div3>a:first-child{
+			background-color: #8f5167;
+		}
+		.middleSection2>.div3>a:last-child{
+			background-color: #1d6e4f;
+		}
+		.middleSection2>.div4>a:first-child{
+			background-color: #c682fa;
+		}
+		.middleSection2>.div4>a:last-child{
+			background-color: #a88631;
+		}
+
+		.middleSection2>.div1>a>article>div{
+			width: 80%;
+			height: auto;
+			margin: 3% 0 6% 3%;
+			background-image: url("Images/flower.jpg");
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		.middleSection2>.div1>a>article>div>.blankDiv,.middleSection2>.div1>a>article>div>.blankDiv2{
+			height: 260px;
+			width: 5px;
+			float: right;
+			margin-top: 6%;
+			margin-right: 5%;
+			background-color: white;
+			transition: 0.5s;
+			opacity: 0;
+		}
+		.middleSection2>.div1>a>article>div>h1{
+			clear: both;
+			float: right;
+			margin-top: -250px;		
+			transition: 0.5s;
+			transition-delay: 0.5s;
+			opacity: 0;
+			font-size: 1.4vw;
+		}
+		.middleSection2>.div1>a>article>div>p{
+			clear: both;
+			margin-left: 8%;
+			margin-right: 10%;
+			position: relative;
+			top: -110px;
+			transition: 0.5s;
+			transition-delay: 1s;
+			opacity: 0;
+			font-size: 1.1vw;
+		}
+		.middleSection2>.div1>a>article>div:hover>p{
+			position: relative;
+			top: -220px;
+			opacity: 1;
+			color: black;
+		}
+		.middleSection2>.div1>a>article>div:hover>h1{
+			transform: translate(-330px);
+			color: black;
+			opacity: 1;
+		}
+
+		.middleSection2>.div1>a>article>div:hover>.blankDiv{
+			transform: translate(-550px);
+			opacity: 1;
+		}
+		.middleSection2>.div1>a>article>div:hover>.blankDiv2{
+			opacity: 0.2;
+			width: 85%;
+		}
+
+		.middleSection2>.div1>a>article>h1,.middleSection2>.div2>a>article>h1,.middleSection2>.div3>a>article>h1,.middleSection2>.div4>a>article>h1{
+			font-size: 2vw;
+			margin-left:2% ;
+			position: relative;
+			top: -10px;
+		}
+		.middleSection2>.div1>a>article>date,.middleSection2>.div2>a>article>date,.middleSection2>.div3>a>article>date,.middleSection2>.div4>a>article>date{
+			margin-left: 2%;
+			position: relative;
+			top: -30px;
+			font-size: 1vw;
+		}
+		.middleSection2>.div2>a>article>p,.middleSection2>.div3>a>article>p,.middleSection2>.div4>a>article>p{
+			font-size: 1.2vw;
+			color: black;
+			margin: 2%;
+			padding: 2%;
+		}
+		.middleSection2>.div2>a>article>.para1,.middleSection2>.div3>a>article>.para1,.middleSection2>.div4>a>article>.para1{
+			border-left: 4px solid black;
+		}
+		.middleSection2>.div2>a>article>.para2,.middleSection2>.div3>a>article>.para2,.middleSection2>.div4>a>article>.para2{
+			border-right: 4px solid black;
+		}
+		.middleSection2>.div2>a>article>.para3,.middleSection2>.div3>a>article>.para3,.middleSection2>.div4>a>article>.para3{
+			border-left: 4px solid black;
+		}
+		.lastSection{
+			display: flex;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			margin-left: 30%;
+			margin-right: 30%;
+		}
+		.lastSection>div{
+			width: 25%;
+			height: auto;
+			text-align: center;
+			font-size: 1vw;
+			color: gray;
+		}
+		.lastSection>div:nth-child(2){
+			transform: scale(1.1);
+			box-shadow: 1px 1px 5px,-1px -1px 5px;
+		}
+		.lastSection>div:nth-child(2)>div{
+			height: 105px;
+		}
+		.lastSection>div>div{
+			height: 90px;
+			background: linear-gradient(white,#cccac4);
+		}
+		.lastSection>div>div>.circle{
+			border: 1px solid gray;
+			width: 55%;
+			height: 80%;
+			border-radius: 50%;			
+			transform: translate(35%,4%);
+			background: linear-gradient(#e8e7e6,white);
+		}
+		.lastSection>div>div>.circle>p{
+			font-size: 1.5vw;
+			font-weight: bold;
+		}
+		.lastSection>div>section{
+			margin-top: 50px;	
+			padding: 20px;
+		}
+		.lastSection>div>section>a>button{
+			background: linear-gradient(#2ab568,#33de7f);
+			color: whitesmoke;
+			font-size: 0.8vw;
+			padding: 7px 15px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 10px;
+		}
+		.lastSection>div>section>p{
+			font-size: 1vw;
+			font-weight: bold;			
+		}
+
+		footer{
+			background-color: #2e302f;
+			color: white;
+			text-align: center;
+			padding-top: 40px;
+			padding-bottom: 20px;
+			margin-top: 20px;
+		}
+		footer>i{
+			border-radius: 50%;
+			padding: 10px;
+			font-size: 1.5vw;
+			background-color: #6f7070;
+			margin-left: 1%;
+			cursor: pointer;
+		}
+		#facebook{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		#facebook:hover{
+			background-color: #1873eb;
+		}
+
+		#twitter:hover{
+			background-color: #4da6e9;
+		}
+
+		#github:hover{
+			background-color: #000000;
+		}
+
+		#ball:hover{
+			background-color: #ff034f;
+		}
+
+		#pint:hover{
+			background-color: #c62026;
+		}
+		footer>p{
+			font-size: 1vw;
+		}
+
+		@media only screen and (orientation: portrait){
+			.middleSection>div>p{
+				font-size: 1.5vw;
+			}
+			.article>p{
+				font-size: 2vw;
+			}
+		.middleSection2>div{
+			flex-direction: column;
+		}
+		.middleSection2>.div1>a>article>div:hover>p{
+			position: relative;
+			top: -220px;
+			opacity: 1;
+			color: black;
+		}
+		.middleSection2>.div1>a>article>div>h1,.middleSection2>.div1>a>article>div>p{
+			font-size: 2vw;
+		}
+		.middleSection2>.div1>a>article>div:hover>h1{
+			transform: translate(-308px);
+		}
+
+		.middleSection2>.div1>a>article>div:hover>.blankDiv{
+			transform: translate(-430px);
+		}
+		.middleSection2>.div1>a>article>div:hover>.blankDiv2{
+			width: 85%;
+		}
+
+		.middleSection2>.div1>a>article>h1,.middleSection2>.div2>a>article>h1,.middleSection2>.div3>a>article>h1,.middleSection2>.div4>a>article>h1{
+			font-size: 5vw;
+			
+		}
+		.middleSection2>.div1>a>article>date,.middleSection2>.div2>a>article>date,.middleSection2>.div3>a>article>date,.middleSection2>.div4>a>article>date{
+			font-size: 3vw;
+		}
+		.middleSection2>.div2>a>article>p,.middleSection2>.div3>a>article>p,.middleSection2>.div4>a>article>p{
+			font-size: 2.5vw;
+		}
+		footer>p,footer>i{
+			font-size: 3vw;
+		}
+		.middleSection2>.div1>a>article>div:hover>p{
+			font-size: 2.3vw;
+		}
+		.middleSection2>.div1>a>article>div:hover>h1{
+			transform: translate(-298px);
+			font-size: 3vw;
+		}
+
+		.middleSection2>.div1>a>article>div:hover>.blankDiv{
+			transform: translate(-480px);
+		}
+		.middleSection2>.div1>a>article>div{
+			width: 90%;
+			height: 550px;
+			margin: 3% 0 6% 3%;
+			background-image: url("Images/flower.jpg");
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		.lastSection{
+			margin-left: 20%;
+			margin-right: 20%;
+		}
+		.lastSection>div{
+			font-size: 1.5vw;
+		}
+		.lastSection>div:nth-child(2)>div{
+			height: 60px;
+		}
+		.lastSection>div>div{
+			height: 50px;
+		}
+		.lastSection>div>div>.circle{
+			height: 90%;
+		}
+		.lastSection>div>div>.circle>p{
+			font-size: 2.3vw;
+		}
+		.lastSection>div>section{
+			margin-top: 20px;	
+			padding: 20px;
+		}
+		.lastSection>div>section>a>button{
+			font-size: 1.5vw;
+		}
+		.lastSection>div>section>p{
+			font-size: 1.5vw;		
+		}
+
+		
+		nav>div:first-child{
+			font-size: 3.5vw;
+			margin-left: 10px;		
+		}
+		nav>div:last-child>a{
+			margin-left: 3%;
+			font-size: 2vw;
+			padding: 3%;
+		}
+		nav>div:last-child{
+			margin-right: 0;
+		}
+		.searchBox{
+			position: absolute;
+			top: 30px;
+			left: 20%;
+			transform: translate(0%,-50%);
+		}
+		.searchBtn>i{
+			font-size: 2vw;
+		}
+		.topSection>img{
+			height: 350px;
+		}
+		.topSection>p{
+			font-size: 3vw;
+		}
+		}
+
+	</style>
+</head>
+<body lang="en">
+
+<nav>
+	<div>LOGO</div>
+	<div>
+		<div class="searchBox">
+<input type="text" class="searchInput" placeholder="Search">
+<a href="#" class="searchBtn">
+<i class="fa fa-search"></i>
+</a>
+</div>
+		<a href="#">Home</a>
+		<a href="#">Products</a>
+		<a href="#">About</a>
+		<a href="#">Blog</a>
+		<a href="#">Testimonials</a>
+		<a href="#">Contact</a>
+	</div>
+</nav>	
+
+<section class="topSection">
+	<img src="Images/road.jpg" align="Road img">
+	<p>Hi folks, Welcome to Sctpl :)<span>|</span></p>
+</section>
+
+<section class="imgSection">
+		<a href="#"><div class="imgDiv1"><h1>Some Text</h1><p>Some placeholder text goes here</p></div></a>
+		<a href="#"><div class="imgDiv2"><h1>Some Text</h1><p>Some placeholder text goes here</p></div></a>
+		<a href="#"><div class="imgDiv3"><h1>Some Text</h1><p>Some placeholder text goes here</p></div></a>
+		<a href="#"><div class="imgDiv4"><h1>Some Text</h1><p>Some placeholder text goes here</p></div></a>
+		<a href="#"><div class="imgDiv5"><h1>Some Text</h1><p>Some placeholder text goes here</p></div></a>
+		<a href="#"><div class="imgDiv6"><h1>Some Text</h1><p>Some placeholder text goes here</p></div></a>
+</section>
+
+<section class="middleSection">
+	<div class="div1"><p>Some placeholder text goes here.Illud phantasma industria vexillum scriptor accumsan fuit unquam cum 1500s, cum incognita est a printer tulit unam, et diripienda autem genus est genus ut libero. Sed etiam in saltu electronic condimentum, remanserant per se unum. Is eram in 1960 popularized cum remissionis de Letraset Folia accumsan locis, recentius in desktop software quasi operturus Jeep libellorum ex eros etiam accumsan.</p></div>
+	<div class="div2"><p>Some placeholder text goes here.Illud phantasma industria vexillum scriptor accumsan fuit unquam cum 1500s, cum incognita est a printer tulit unam, et diripienda autem genus est genus ut libero. Sed etiam in saltu electronic condimentum, remanserant per se unum. Is eram in 1960 popularized cum remissionis de Letraset Folia accumsan locis, recentius in desktop software quasi operturus Jeep libellorum ex eros etiam accumsan.</p></div>
+	<div class="div3"><p>Some placeholder text goes here.Illud phantasma industria vexillum scriptor accumsan fuit unquam cum 1500s, cum incognita est a printer tulit unam, et diripienda autem genus est genus ut libero. Sed etiam in saltu electronic condimentum, remanserant per se unum. Is eram in 1960 popularized cum remissionis de Letraset Folia accumsan locis, recentius in desktop software quasi operturus Jeep libellorum ex eros etiam accumsan.</p></div>
+</section>
+
+<article class="article">
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br>
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</article>
+
+<section class="middleSection2">
+	<div class="div1"><a href="#"><article>
+		<div>
+			<div class="blankDiv"></div>
+			<div class="blankDiv2"></div>
+			<h1>IF WE COULD LAUGH</h1>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		</div>
+	</article></a>
+	<a href="#"><article>
+		<h1>A post about things and stuff</h1>
+		<date>Feb 25th,2021</date>
+	</article></a></div>
+
+	<div class="div2"><a href="#"><article>
+		<h1>A post about things and stuff</h1>
+		<date>Feb 25th,2021</date></article></a>
+	<a href="#"><article>
+		<p class="para1">"The U.S. is fast approching $19.000.000.000.000.00 in national debt. This is mathematically impossible to ever pay back...ene if 
+		every American was taxed at 100%."<br><br>-Charlies Goyette,The Dollar Meltdown</p>
+		<p class="para2">"79 million Baby Boomers are about to retire,pull their money out of the eonomy and demand their $35 Trillion Dollars in Social Security & Medicare.Think that through..."<br><br>Robert Kiyosaki-</p>
+		<p class="para3">"23.4% of American are Currently Unemployed...not the 3.1% they'd like you to believe."<br><br>-ShadowStats.com</p>
+	</article></a></div>
+
+	<div class="div3"><a href="#"><article>
+		<p class="para1">"The U.S. is fast approching $19.000.000.000.000.00 in national debt. This is mathematically impossible to ever pay back...ene if 
+		every American was taxed at 100%."<br><br>-Charlies Goyette,The Dollar Meltdown</p>
+		<p class="para2">"79 million Baby Boomers are about to retire,pull their money out of the eonomy and demand their $35 Trillion Dollars in Social Security & Medicare.Think that through..."<br><br>Robert Kiyosaki-</p>
+		<p class="para3">"23.4% of American are Currently Unemployed...not the 3.1% they'd like you to believe."<br><br>-ShadowStats.com</p>
+	</article></a>
+	<a href="#"><article>
+	<h1>A post about things and stuff</h1>
+		<date>Feb 25th,2021</date></article></a></div>
+
+	<div class="div4"><a><article>
+	<h1>A post about things and stuff</h1>
+		<date>Feb 25th,2021</date></article></a>
+	<a href="#"><article>
+		<p class="para1">"The U.S. is fast approching $19.000.000.000.000.00 in national debt. This is mathematically impossible to ever pay back...ene if 
+		every American was taxed at 100%."<br><br>-Charlies Goyette,The Dollar Meltdown</p>
+		<p class="para2">"79 million Baby Boomers are about to retire,pull their money out of the eonomy and demand their $35 Trillion Dollars in Social Security & Medicare.Think that through..."<br><br>Robert Kiyosaki-</p>
+		<p class="para3">"23.4% of American are Currently Unemployed...not the 3.1% they'd like you to believe."<br><br>-ShadowStats.com</p>
+	</article></a>
+</section>
+
+<section class="lastSection">
+	<div>
+		<div><h1>Enterprise</h1><div class="circle"><p>$59</p></div></div>
+		<section>
+			<a href="#"><button>SIGN UP</button></a>
+			<hr><p>10GB Disk Space</p>
+			<hr><p>100GB Monthly Bandwidth</p>
+			<hr><p>20 Email Accounts</p>
+			<hr><p>Unlimited subdomains</p>
+		</section>
+	</div>
+	<div>
+		<div class="professional"><h1>Professional</h1><div class="circle"><p>$29</p></div></div>
+		<section>
+			<a href="#"><button>SIGN UP</button></a>
+			<hr><p>5GB Disk Space</p>
+			<hr><p>500GB Monthly Bandwidth</p>
+			<hr><p>10 Email Accounts</p>
+			<hr><p>Unlimited subdomains</p>
+		</section>
+	</div>
+	<div>
+		<div><h1>Standard</h1><div class="circle"><p>$17</p></div></div>
+		<section>
+			<a href="#"><button>SIGN UP</button></a>
+			<hr><p>3GB Disk Space</p>
+			<hr><p>25GB Monthly Bandwidth</p>
+			<hr><p>5 Email Accounts</p>
+			<hr><p>Unlimited subdomains</p>
+		</section>
+	</div>
+	<div>
+		<div><h1>Basic</h1><div class="circle"><p>$9</p></div></div>
+		<section>
+			<a href="#"><button>SIGN UP</button></a>
+			<hr><p>1GB Disk Space</p>
+			<hr><p>10GB Monthly Bandwidth</p>
+			<hr><p>2 Email Accounts</p>
+			<hr><p>Unlimited subdomains</p>
+		</section>
+	</div>
+</section>
+
+<footer>
+	<i class='fab' id="facebook">&#xf39e;</i>
+	<i class='fab' id="twitter">&#xf099;</i>
+	<i class='fab' id="github">&#xf113;</i>
+	<i class='fab' id="ball">&#xf17d;</i>
+	<i class='fab' id="pint">&#xf0d2;</i>
+
+	<p>Copyright © 2019 • Suven Consultants and technology pvt ltd • All rights reserved</p>
+</footer>
+
+</body>
+</html>
